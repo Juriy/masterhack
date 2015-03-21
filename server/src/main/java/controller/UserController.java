@@ -11,10 +11,11 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private static int userCounter = 1;
-    private Database database;
+    private Database database = new Database();
 
     @RequestMapping(value = "/users")
     public String login() {
+        System.out.println("Create new user");
         String userId = "user" + userCounter++;
         String userName = userId + "_name";
         String userSurname = userId + "_surname";
@@ -26,15 +27,18 @@ public class UserController {
         return userId;
     }
 
-    @RequestMapping("/users/{userId}")
+    @RequestMapping(value = "/users/{userId}/friends", method = RequestMethod.GET)
+    public User getFriends(@PathVariable String userId) {
+        System.out.println("querying for friend");
+        return database.getUser(userId);
+    }
+
+    @RequestMapping(value = "/users/{userId}", method = RequestMethod.GET)
     public User getProfile(@PathVariable String userId) {
         return database.getUser(userId);
     }
 
-    @RequestMapping(value = "/users/{userId}", method = RequestMethod.POST)
-    public User addFriends(@PathVariable String userId) {
-        return database.getUser(userId);
-    }
+
 
 
 }
