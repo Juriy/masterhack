@@ -31,9 +31,9 @@
             )
         };
 
-        this.getGroup = function (id) {
+        this.getGroups = function () {
             return $http({
-                url: config.api + '/groups/' + id,
+                url: config.api + '/groups' ,
                 method: 'GET'
             });
         };

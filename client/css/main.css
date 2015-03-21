@@ -28,16 +28,16 @@ body {
 }
 
 #restaurant-img {
-    background-image: url('../img/rest-img.jpg');
+    background-image: url('/img/rest-img.jpg');
 }
 
 #pot-container
 {
-    background-image: url('../img/restaurant.jpg');
+    background-image: url('/img/restaurant.jpg');
 }
 
 #logo {
-    background-image: url('../img/logo.jpg') ;
+    background-image: url('/img/logo.jpg') ;
     width: 175px;
     height: 50px;
     float: left;
