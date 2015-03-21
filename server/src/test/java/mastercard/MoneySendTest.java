@@ -11,6 +11,6 @@ public class MoneySendTest {
 
     @Test
     public void testMoneySend(){
-        moneySend.transferMoneyTo("5184680430000014");
+        moneySend.transferMoneyTo("5184680430000014", 100);
     }
 }

@@ -22,22 +22,19 @@ public class GroupController {
 
     private Gson gson = new Gson();
 
-    @RequestMapping(value = "/groups",method = RequestMethod.POST)
-    public @ResponseBody String createGroup() {
-        System.out.println("Create new group");
-        Group group = new Group();
-        String groupId = "group" + groupCounter++;
-        group.setGroupId(groupId);
-        database.saveGroup(group);
-        return groupId;
+    @RequestMapping(value = "/groups",method = RequestMethod.GET)
+    public @ResponseBody Collection<Group> createGroup() {
+        System.out.println("Return all groups");
+        return database.getGroups();
     }
 
-    @RequestMapping(value = "/groups",method = RequestMethod.PUT)
-    public @ResponseBody String createGroupWithUsers(@RequestBody Collection<String> users) {
+    @RequestMapping(value = "/groups/{groupName}",method = RequestMethod.PUT)
+    public @ResponseBody String createGroupWithUsers(@RequestBody Collection<String> users, @PathVariable String groupName) {
         System.out.println("Create new group");
         Group group = new Group();
         String groupId = "group" + groupCounter++;
         group.setGroupId(groupId);
+        group.setGroupName(groupName);
         System.out.println("add users to group");
         group.addUser(users);
         database.saveGroup(group);
