@@ -1,5 +1,6 @@
 package controller;
 
+import com.google.gson.Gson;
 import db.Database;
 import db.DatabaseFactory;
 import model.User;
@@ -15,8 +16,9 @@ public class UserController {
 
     private static int userCounter = 1;
     private Database database = DatabaseFactory.getDatabase();
+    private Gson gson = new Gson();
 
-    @RequestMapping(value = "/users", produces="application/json")
+    @RequestMapping(value = "/users")
     public @ResponseBody String login() {
         System.out.println("Create new user");
         String userId = "user" + userCounter++;
@@ -28,7 +30,7 @@ public class UserController {
         user.setSecondName(userSurname);
         user.setFirstName(userName);
         database.saveUser(user);
-        return userId;
+        return gson.toJson(userId);
     }
 
 //    [{"firstName":"firstName","secondName":"surname","pictureUrl":"picUrl","userId":"userId"}]
