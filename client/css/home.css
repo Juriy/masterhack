@@ -1,18 +1,38 @@
 .make-split{
     background-color: #034af3;
     color: #ffffff;
+    width: 95%;
+    height: 60px;
+    font-size: 2em;
+    margin: 20px;
 }
 
 .gray-bar{
-    height: 30px;
+    height: 60px;
     width: 100%;
-    background-color: #444444;
+    font-size: 2em;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #777777;
+    color: #ffffff;
 }
 
 .bill {
     font-size: 3em;
     color: black;
 
+}
+
+.splitsie:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+
+}
+
+.thmb {
+    height: 70px;
+    border: 1px solid #eeeeee;
+    margin: 10px;
 }
 
 .timestamp {

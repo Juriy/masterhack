@@ -1,23 +1,25 @@
-<div class="col-lg-12">
-<a class="col-lg-10 make-split" href="#">make a splitsie</a>
-
+<div class="col-lg-6">
+    <div class="row">
+<button class="col-lg-5 make-split" ng-click="checkOut()">make a splitsie</button>
+    </div>
 <!-- Active Splitsies -->
     <div class="row">
         <span class="col-lg-12 gray-bar">
             active splitsies
         </span>
 
-        <div class="" ng-repeat="gr in groups(3)">
-            <div class="row">
+
+        <div class="" ng-repeat="gr in groups">
+            <div class="row splitsie">
                 <div class="col-lg-2">
-                    <img ng-src="gr.pictureUrl">
+                    <img class="thmb" ng-src="../client/img/{{gr.pictureUrl}}.png">
                 </div>
-                <div class="col-lg-8">
-                    <h3>{{gr.name}}</h3>
-                    <h2>{{gr.timestamp | date: "shortTime"}}</h2>
+                <div class="col-lg-6 text-left">
+                    <h3>{{gr.groupName}}</h3>
+                    <h4>{{gr.timestamp | date: "shortTime"}}</h4>
                 </div>
-                <div class="col-lg-4">
-                    <span class="bill">{{gr.remainBill}}</span>
+                <div class="col-lg-2 text-center">
+                    <span class="bill">${{gr.remainBill}}</span>
                 </div>
             </div>
 

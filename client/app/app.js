@@ -24,11 +24,11 @@
 				controller: 'UserDetailsController',
 				templateUrl: 'views/user-details.html'
 			})
-            .when('profile', {
+            .when('/profile', {
                 controller: 'UserDetailsController',
                 templateUrl: 'views/user-details.html'
             })
-            .when('checkout', {
+            .when('/checkout', {
                 controller: 'CheckoutController',
                 templateUrl: 'views/checkout.html'
             })
