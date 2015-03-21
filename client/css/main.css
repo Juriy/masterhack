@@ -1,7 +1,38 @@
 body {
-    padding-top: 50px;
+    background-color: #e9e8e4;
+    max-width: 400px;
 }
+
 .main {
-    padding: 40px 15px;
     text-align: center;
 }
+
+.header {
+    height: 55px;
+    background: #007069 url('/img/header@2x.jpg') no-repeat;
+    background-size: 100%;
+}
+
+.banner {
+    height: 135px;
+    background: url('/img/steak@2x.jpg') no-repeat;
+    background-size: 100%;
+}
+
+.bill-summary {
+    height: 180px;
+   /* background-color: #204d74;*/
+}
+
+.food-items {
+    height: 300px;
+    background: url('/img/food-items@2x.jpg') no-repeat;
+    background-size: 100%;
+}
+
+/* colorA: ed9801  */
+/* colorB: d73037  */
+/* colorC:   */
+/*   */
+/*   */
+/*   */
