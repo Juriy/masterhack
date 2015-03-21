@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
 
 /**
  * Created by Juriy on 3/21/2015.
@@ -9,6 +10,7 @@ import java.util.Collection;
 public class Group {
 
     private Collection<String> usersId;
+    private Map<String, Double> usersBill;
     private String groupId;
 
     public Group() {
