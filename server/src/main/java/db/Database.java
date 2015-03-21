@@ -1,5 +1,6 @@
 package db;
 
+import model.Group;
 import model.User;
 
 import java.util.*;
@@ -8,7 +9,14 @@ import java.util.*;
  * Created by Juriy on 3/21/2015.
  */
 public class Database {
-    Map<String, User> users = new HashMap<>();
+    private Map<String, User> users = new HashMap<>();
+    private Map<String, Group> groups = new HashMap<>();
+
+
+
+    @Deprecated
+    Database() {
+    }
 
     public synchronized void saveUser(User user){
         users.put(user.getUserId(), user);
@@ -27,5 +35,13 @@ public class Database {
             }
         }
         return friends;
+    }
+
+    public void saveGroup(Group group){
+        groups.put(group.getGroupId(), group);
+    }
+
+    public Group getGroup(String groupId){
+        return groups.get(groupId);
     }
 }

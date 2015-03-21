@@ -1,6 +1,7 @@
 package controller;
 
 import db.Database;
+import db.DatabaseFactory;
 import model.User;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +14,7 @@ import java.util.Collection;
 public class UserController {
 
     private static int userCounter = 1;
-    private Database database = new Database();
+    private Database database = DatabaseFactory.getDatabase();
 
     @RequestMapping(value = "/users")
     public String login() {

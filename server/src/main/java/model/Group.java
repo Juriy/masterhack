@@ -8,19 +8,19 @@ import java.util.Collection;
  */
 public class Group {
 
-    private Collection<User> users;
+    private Collection<String> usersId;
     private String groupId;
 
     public Group() {
-        users = new ArrayList<>();
+        usersId = new ArrayList<>();
     }
 
-    public Collection<User> getUsers() {
-        return users;
+    public Collection<String> getUsers() {
+        return usersId;
     }
 
-    public void addUser(User user){
-        users.add(user);
+    public void addUser(String user){
+        usersId.add(user);
     }
 
     public String getGroupId() {
@@ -29,5 +29,9 @@ public class Group {
 
     public void setGroupId(String groupId) {
         this.groupId = groupId;
+    }
+
+    public void addUser(Collection<String> newUsers) {
+        usersId.addAll(newUsers);
     }
 }
