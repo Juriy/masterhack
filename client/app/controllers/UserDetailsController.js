@@ -6,7 +6,7 @@
 
 	function UserDetailsController($routeParams, $scope, UserService) {
 		UserService
-			.getUser(+$routeParams.id)
+			.getUser('12')
 			.then(function(payload) {
 				$scope.user = payload.data;
 			});

@@ -1,28 +1,36 @@
 (function() {
 	angular
 		.module('masterhack', ['ngRoute'])
-		.config(configureRoutes);
+		.config(configureRoutes)
+		.constant('config', {
+			api: 'http://localhost:8080'
+		});
 
 	function configureRoutes($routeProvider) {
 		$routeProvider
+			.when('/pot', {
+				controller: 'PotController',
+				templateUrl: 'views/pot.html'
+			})
+			.when('/group', {
+				controller: 'GroupController',
+				templateUrl: 'views/group.html'
+			})
 			.when('/friends', {
 				controller: 'FriendsController',
 				templateUrl: 'views/friends.html'
 			})
 			.when('/user/:id', {
 				controller: 'UserDetailsController',
-				templateUrl: 'views/book-details.html'
+				templateUrl: 'views/user-details.html'
 			})
-            .when('/order', {
-                controller: 'GroupCartController',
-                templateUrl: 'views/cart-details.html'
+            .when('profile', {
+                controller: 'UserDetailsController',
+                templateUrl: 'views/user-details.html'
             })
-            .when ('/', {
-            controller: 'MainPageController',
-            templateUrl: 'views/main-page.html'
-        })
 			.otherwise({
-				redirectTo: '/'
+				controller: 'PotController',
+				templateUrl: 'views/pot.html'
 			});
 	}
 
