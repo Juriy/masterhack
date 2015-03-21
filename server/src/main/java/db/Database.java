@@ -27,6 +27,7 @@ public class Database {
         Item meal = new Item("item2", 20.0, "Meal");
         Item desert = new Item("item3", 30.0, "Desert");
         Group group = new Group();
+        group.setGroupId("group1");
         group.addItemInCart(beer);
         group.addItemInCart(meal);
         group.addItemInCart(desert);
@@ -66,4 +67,5 @@ public class Database {
     public Group getGroup(String groupId){
         return groups.get(groupId);
     }
+
 }

@@ -48,9 +48,10 @@ public class GroupController {
         return group;
     }
 
+
     @RequestMapping(value = "/groups/{groupId}/users",method = RequestMethod.GET)
     public @ResponseBody Collection<User> getGroupUsers(@PathVariable String groupId) {
-        System.out.println("add users to group");
+        System.out.println("get group's users");
         Group group = database.getGroup(groupId);
         List<User> users = new ArrayList<>();
         for(String userId:group.getUsers()){
@@ -59,6 +60,27 @@ public class GroupController {
         return users;
     }
 
+    @RequestMapping(value = "/groups/{groupId}/users/{userId}/{amount}",method = RequestMethod.POST)
+    public void payAmount(@PathVariable double amount, @PathVariable String groupId, @PathVariable String userId) {
+        System.out.println("User pays amount");
+        Group group = database.getGroup(groupId);
+        group.userPaysSplit(userId, amount);
+        database.saveGroup(group);
+    }
+
+    @RequestMapping(value = "/groups/{groupId}/users/{userId}",method = RequestMethod.POST)
+    public void payItems(@RequestBody Collection<String> itemIds, @PathVariable String groupId, @PathVariable String userId) {
+        System.out.println("User pays amount");
+        Group group = database.getGroup(groupId);
+        group.userPaysItems(userId, itemIds);
+        database.saveGroup(group);
+    }
+
+    /**
+     * add item in group's cart
+     * @param groupId
+     * @param item
+     */
     @RequestMapping(value = "/groups/{groupId}/items",method = RequestMethod.POST)
     public void addItemToCart(@PathVariable String groupId, @RequestBody Item item) {
         System.out.println("add item to group's cart");
@@ -66,17 +88,29 @@ public class GroupController {
         group.addItemInCart(item);
     }
 
+    /**returns list of items to be payed
+     *
+     * @param groupId
+     * @return
+     */
     @RequestMapping(value = "/groups/{groupId}/items",method = RequestMethod.GET)
     public @ResponseBody Collection<Item> getItems(@PathVariable String groupId) {
         System.out.println("add item to group's cart");
         Group group = database.getGroup(groupId);
-        return group.getCart().getItems();
+        return group.getCart().getItemsToPay();
     }
 
-    @RequestMapping(value = "/groups/{groupId}/bill",method = RequestMethod.GET)
+    @RequestMapping(value = "/groups/{groupId}/totalBill",method = RequestMethod.GET)
     public @ResponseBody String getTotalBill(@PathVariable String groupId) {
         Group group = database.getGroup(groupId);
         double total = group.getTotalBill();
+        return gson.toJson(total);
+    }
+
+    @RequestMapping(value = "/groups/{groupId}/remainBill",method = RequestMethod.GET)
+    public @ResponseBody String getRemainBill(@PathVariable String groupId) {
+        Group group = database.getGroup(groupId);
+        double total = group.getRemainBill();
         return gson.toJson(total);
     }
 }
