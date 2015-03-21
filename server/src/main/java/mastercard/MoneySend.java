@@ -12,13 +12,13 @@ import java.util.Random;
  * Created by Juriy on 3/21/2015.
  */
 public class MoneySend {
-    private String splitiesCardNumber = "5184680430000006";
+    private static String splitiesCardNumber = "5184680430000006";
 
     public static final String MASTER_CARD_URL="http://dmartin.org:8021/moneysend/v2/transfer";
 
-    RestTemplate restTemplate = new RestTemplate();
+    private static RestTemplate restTemplate = new RestTemplate();
 
-    public boolean transferMoneyTo(String recipientAccountNumber){
+    public static boolean transferMoneyTo(String recipientAccountNumber, double amount){
 
         while(true) {
             String requestBody = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
@@ -35,13 +35,13 @@ public class MoneySend {
                     "      <Country>USA</Country>" +
                     "   </SenderAddress>" +
                     "   <FundingCard>" +
-                    "      <AccountNumber>5184680430000006</AccountNumber>" +
+                    "      <AccountNumber>"+splitiesCardNumber+"</AccountNumber>" +
                     "      <ExpiryMonth>11</ExpiryMonth>" +
                     "      <ExpiryYear>2016</ExpiryYear>" +
                     "   </FundingCard>" +
                     "   <FundingMasterCardAssignedId>123456</FundingMasterCardAssignedId>" +
                     "   <FundingAmount>" +
-                    "      <Value>15000</Value>" +
+                    "      <Value>"+(int)amount+"</Value>" +
                     "      <Currency>840</Currency>" +
                     "   </FundingAmount>" +
                     "   <ReceiverName>Jose Lopez</ReceiverName>" +
@@ -97,13 +97,13 @@ public class MoneySend {
                     return true;
                 }
             }catch(Exception e){
-
+                e.printStackTrace();
             }
 
         }
     }
 
-    private String generateRandomTransactionReference(){
+    private static String generateRandomTransactionReference(){
         StringBuffer sb = new StringBuffer("");
         Random random = new Random();
         for(int i=0;i<19;i++){

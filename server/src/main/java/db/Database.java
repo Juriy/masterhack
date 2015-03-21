@@ -15,6 +15,7 @@ public class Database {
 
 
 
+
     @Deprecated
     Database() {
         users.put("user1", new User("Andrew", "Scotch", "https://github.com/fluidicon.png", "user1"));
@@ -28,6 +29,7 @@ public class Database {
         Item desert = new Item("item3", 30.0, "Desert");
         Group group = new Group();
         group.setGroupId("group1");
+        group.setGroupName("Restaurant");
         group.addItemInCart(beer);
         group.addItemInCart(meal);
         group.addItemInCart(desert);
@@ -37,7 +39,20 @@ public class Database {
         group.addUser("user3");
         group.addUser("user4");
 
+        Group group2 = new Group();
+        group2.setGroupId("group2");
+        group2.setGroupName("Restaurant2");
+        group2.addItemInCart(beer);
+        group2.addItemInCart(meal);
+        group2.addItemInCart(desert);
+
+        group2.addUser("user1");
+        group2.addUser("user2");
+        group2.addUser("user3");
+        group2.addUser("user4");
+
         groups.put("group1", group);
+        groups.put("group2", group2);
 
     }
 
