@@ -4,6 +4,8 @@ import db.Database;
 import model.User;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
+
 /**
  * Created by Juriy on 3/21/2015.
  */
@@ -28,9 +30,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "/users/{userId}/friends", method = RequestMethod.GET)
-    public User getFriends(@PathVariable String userId) {
+    public Collection<User> getFriends(@PathVariable String userId) {
         System.out.println("querying for friend");
-        return database.getUser(userId);
+        return database.getUsersFriends(userId);
     }
 
     @RequestMapping(value = "/users/{userId}", method = RequestMethod.GET)
