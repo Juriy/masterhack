@@ -85,7 +85,7 @@ public class MasterPass {
 
 
         Credentials cred = new Credentials();
-        cred.setRequestToken(data.getRequestTokenResponse().getOauthExpiresIn());
+        cred.setRequestToken(data.getRequestToken());
         cred.setCallbackUrl(data.getCallbackUrl());
         cred.setMerchantCheckoutId(data.getCheckoutIdentifier());
         cred.setAllowedCardTypes(data.getAcceptedCards());
