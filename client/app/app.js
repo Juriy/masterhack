@@ -13,6 +13,14 @@
 				controller: 'UserDetailsController',
 				templateUrl: 'views/book-details.html'
 			})
+            .when('/order', {
+                controller: 'GroupCartController',
+                templateUrl: 'views/cart-details.html'
+            })
+            .when ('/', {
+            controller: 'MainPageController',
+            templateUrl: 'views/main-page.html'
+        })
 			.otherwise({
 				redirectTo: '/'
 			});
