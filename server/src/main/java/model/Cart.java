@@ -20,6 +20,14 @@ public class Cart {
         return itemList;
     }
 
+    public double getTotalBill(){
+        double total = 0;
+        for(Item i:itemList){
+            total = total + i.getItemPrice();
+        }
+        return total;
+    }
+
     @Override
     public String toString() {
         return "Cart{" +

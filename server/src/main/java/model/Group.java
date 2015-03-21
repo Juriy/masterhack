@@ -50,4 +50,8 @@ public class Group {
     public void resetCart(){
         groupCart = new Cart();
     }
+
+    public Double getTotalBill(){
+        return groupCart.getTotalBill();
+    }
 }
