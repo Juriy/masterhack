@@ -16,6 +16,8 @@ public class Group {
     private Cart groupCart;
     private String groupId;
     private String groupName;
+    private long timestamp = (new Date()).getTime();
+    private String pictureUrl;
 
     private String merchantCardNumber = "5184680430000014";
 
@@ -141,5 +143,21 @@ public class Group {
 
     public Stack<Event> getGroupEvents() {
         return groupEvents;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(long timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 }
