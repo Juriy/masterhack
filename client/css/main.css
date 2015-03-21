@@ -165,6 +165,16 @@ body {
 }
 
 
+/* LOGIN MOCK */
+.login-mock {
+    width: 375px;
+    height: 667px;
+    background-image: url("/img/login.jpg");
+    background-size: 100%;
+}
+
+
+
 /* colorA: ed9801  */
 /* colorB: d73037  */
 /* colorC:   */
