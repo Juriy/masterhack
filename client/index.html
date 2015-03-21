@@ -15,17 +15,25 @@
 	</head>
 
 	<body ng-app="masterhack">
+	<ng-include src="'views/header.html'"></ng-include>
 
-		<div ng-controller="FriendsController"></div>
+	<div class="container">
+		<div class="main" ng-view>
+			Hello there
+		</div>
+	</div>
 
-		<script src="vnd/jquery/dist/jquery.min.js"></script>
-		<script src="vnd/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="vnd/angular/angular.js"></script>
-		<script src="vnd/angular-route/angular-route.js"></script>
 
-		<script src="app/app.js"></script>
-		<script src="app/services/UserService.js"></script>
-		<script src="app/controllers/FriendsController.js"></script>
-		<script src="app/controllers/UserDetailsController.js"></script>
+	<script src="vnd/jquery/dist/jquery.min.js"></script>
+	<script src="vnd/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="vnd/angular/angular.js"></script>
+	<script src="vnd/angular-route/angular-route.js"></script>
+
+	<script src="app/app.js"></script>
+	<script src="app/services/UserService.js"></script>
+	<script src="app/controllers/FriendsController.js"></script>
+	<script src="app/controllers/UserDetailsController.js"></script>
+	<script src="app/controllers/PotController.js"></script>
+	<script src="app/controllers/GroupController.js"></script>
 	</body>
 </html>
