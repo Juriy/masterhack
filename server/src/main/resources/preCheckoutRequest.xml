@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PrecheckoutDataRequest xmlns:ns2="urn:mastercard.com:ppol:common:types" xmlns="urn:mastercard.com:ppol:switchapi:types">
+    <PairingDataTypes>
+        <ns2:PairingDataType>
+            <ns2:Type>ADDRESS</ns2:Type>
+        </ns2:PairingDataType>
+        <ns2:PairingDataType>
+            <ns2:Type>PROFILE</ns2:Type>
+        </ns2:PairingDataType>
+        <ns2:PairingDataType>
+            <ns2:Type>CARD</ns2:Type>
+        </ns2:PairingDataType>
+    </PairingDataTypes>
+</PrecheckoutDataRequest>
