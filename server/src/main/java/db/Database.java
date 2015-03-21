@@ -1,6 +1,7 @@
 package db;
 
 import model.Group;
+import model.Item;
 import model.User;
 
 import java.util.*;
@@ -22,6 +23,21 @@ public class Database {
         users.put("user4", new User("Danial", "Koh", "https://github.com/fluidicon.png", "user4"));
         users.put("user5", new User("Eagle", "Bold", "https://github.com/fluidicon.png", "user5"));
 
+        Item beer = new Item("item1", 10.0, "Beer");
+        Item meal = new Item("item2", 20.0, "Meal");
+        Item desert = new Item("item3", 30.0, "Desert");
+        Group group = new Group();
+        group.setGroupId("group1");
+        group.addItemInCart(beer);
+        group.addItemInCart(meal);
+        group.addItemInCart(desert);
+
+        group.addUser("user1");
+        group.addUser("user2");
+        group.addUser("user3");
+        group.addUser("user4");
+
+        groups.put("group1", group);
 
     }
 
@@ -51,4 +67,5 @@ public class Database {
     public Group getGroup(String groupId){
         return groups.get(groupId);
     }
+
 }
