@@ -3,13 +3,19 @@ package mastercard;
 import mastercard.mcwallet.sampleapp.MasterpassController;
 import mastercard.mcwallet.sampleapp.MasterpassData;
 import model.Credentials;
+import model.Item;
+
+import java.io.*;
+import java.util.Collection;
 
 /**
  * Created by Juriy on 3/22/2015.
  */
 public class MasterPass {
+    private static final String SHOPPING_CART_XML = "shoppingCart.xml";
 
-    public Credentials getCredentials() throws Exception {
+
+    private Credentials getCredentials() throws Exception {
         MasterpassData data = new MasterpassData();
         data.setErrorMessage(null);
         data.setAppBaseUrl("http://localhost:8080");
@@ -88,5 +94,66 @@ public class MasterPass {
         cred.setLoyaltyEnabled(data.getRewards());
         cred.setRequestBasicCheckout(data.getAuthLevelBasic());
         return cred;
+    }
+
+    public Credentials getCredentials(Collection<Item> items) throws Exception {
+        double total =0;
+        for(Item item:items){
+            total = total + item.getItemPrice();
+        }
+
+        StringBuffer sb = new StringBuffer("<?xml version=\"1.0\"?>\n" +
+                "<ShoppingCartRequest>\n" +
+                "  <OAuthToken></OAuthToken>\n" +
+                "  <ShoppingCart>\n" +
+                "    <CurrencyCode>USD</CurrencyCode>\n" +
+                "    <Subtotal>"+(int) total+"</Subtotal>");
+        for(Item i:items){
+            sb.append("<ShoppingCartItem>\n" +
+                    "      <Description>"+i.getItemDescription()+"</Description>\n" +
+                    "      <Quantity>1</Quantity>\n" +
+                    "      <Value>"+i.getItemPrice()+"</Value>\n" +
+                    "      <ImageURL></ImageURL>\n" +
+                    "    </ShoppingCartItem>");
+        }
+        sb.append("</ShoppingCart>\n" +
+                "</ShoppingCartRequest>");
+        rewriteShoppingCart(sb.toString());
+        return getCredentials();
+    }
+
+    public Credentials getCredentials(int total) throws Exception {
+        StringBuffer sb = new StringBuffer("<?xml version=\"1.0\"?>\n" +
+                "<ShoppingCartRequest>\n" +
+                "  <OAuthToken></OAuthToken>\n" +
+                "  <ShoppingCart>\n" +
+                "    <CurrencyCode>USD</CurrencyCode>\n" +
+                "    <Subtotal>"+(int) total+"</Subtotal>");
+
+            sb.append("<ShoppingCartItem>\n" +
+                    "      <Description>Splities payment</Description>\n" +
+                    "      <Quantity>1</Quantity>\n" +
+                    "      <Value>"+total+"</Value>\n" +
+                    "      <ImageURL></ImageURL>\n" +
+                    "    </ShoppingCartItem>");
+
+        sb.append("</ShoppingCart>\n" +
+                "</ShoppingCartRequest>");
+        rewriteShoppingCart(sb.toString());
+        return getCredentials();
+    }
+
+    private void rewriteShoppingCart(String xml){
+        ClassLoader cl = this.getClass().getClassLoader();
+        try {
+            FileWriter writer = new FileWriter(cl.getResource(SHOPPING_CART_XML).getFile());
+            writer.write(xml);
+            writer.flush();
+            writer.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
