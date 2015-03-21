@@ -24,11 +24,18 @@ body {
    /* background-color: #204d74;*/
 }
 
-.food-items {
-    height: 300px;
+.items {
+    height: 250px;
+    background-color: #398439;
+}
+
+.tabs-transaction {
+    height: 50px;
     background: url('/img/food-items@2x.jpg') no-repeat;
     background-size: 100%;
+
 }
+
 
 /* colorA: ed9801  */
 /* colorB: d73037  */
