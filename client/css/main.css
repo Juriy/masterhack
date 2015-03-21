@@ -3,6 +3,11 @@
     src: url('AVANGMI_.TTF')  format('truetype');
 }
 
+@font-face {
+    font-family: 'AvangmiLight';
+    src: url('AVANGMI_.TTF')  format('truetype');
+}
+
 body {
     background-color: #e9e8e4;
     max-width: 400px;
@@ -97,7 +102,7 @@ body {
     padding-left: 24px;
     padding-right: 24px;
     padding-top: 20px;
-    font-family: Avangmi, serif;
+    font-family: AvangmiLight, serif;
     text-align: left;
     height: 130px;
 }
@@ -109,18 +114,54 @@ body {
     margin-top: -15px;
 }
 
-.current-due-dollars {
+.value-dollars {
     font-size: 90px;
     margin-top: -20px;
     color: #d83037;
     float: left;
 }
 
-.current-due-cents {
+.value-cents {
     font-size: 50px;
     margin-top: -10px;
     color: #d83037;
     float: left;
+}
+
+.payed-total {
+    float: right;
+    width: 100px;
+    height: 100px;
+    margin-top: -20px;
+}
+
+.payed-total .dollar-sign {
+    font-size: 12px;
+    margin-top: -3px;
+    color: #ed9b10;
+}
+
+.payed-total .value-cents {
+    color: #ed9b10;
+}
+
+.small-price .value-dollars {
+    margin-top: -4px;
+    font-size: 22px;
+    color: #ed9b10;
+}
+
+.small-price .value-cents {
+    font-size: 14px;
+    margin-top: -5px;
+}
+
+.small-price .value-dollars {
+    font-size: 20px;
+}
+
+.total-bill .dollar-sign, .total-bill .value-dollars, .total-bill .value-cents {
+    color: #d83037;
 }
 
 
