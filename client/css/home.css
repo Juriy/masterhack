@@ -1,0 +1,21 @@
+.make-split{
+    background-color: #034af3;
+    color: #ffffff;
+}
+
+.gray-bar{
+    height: 30px;
+    width: 100%;
+    background-color: #444444;
+}
+
+.bill {
+    font-size: 3em;
+    color: black;
+
+
+}
+
+.timestamp {
+    color: #9d9d9d;
+}

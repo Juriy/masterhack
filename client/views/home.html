@@ -1,0 +1,33 @@
+<div class="col-lg-12">
+<a class="col-lg-10 make-split" href="#">make a splitsie</a>
+
+<!-- Active Splitsies -->
+    <div class="row">
+        <span class="col-lg-12 gray-bar">
+            active splitsies
+        </span>
+
+        <div class="" ng-repeat="gr in groups(3)">
+            <div class="row">
+                <div class="col-lg-2">
+                    <img ng-src="gr.pictureUrl">
+                </div>
+                <div class="col-lg-8">
+                    <h3>{{gr.name}}</h3>
+                    <h2>{{gr.timestamp | date: "shortTime"}}</h2>
+                </div>
+                <div class="col-lg-4">
+                    <span class="bill">{{gr.remainBill}}</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+<!-- Public Splitsies -->
+    <div class="row">
+        <span class="col-lg-12 gray-bar">
+            public splitsies
+        </span>
+    </div>
+</div>

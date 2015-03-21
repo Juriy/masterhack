@@ -8,9 +8,9 @@
 
 	function configureRoutes($routeProvider) {
 		$routeProvider
-			.when('/pot', {
+			.when('/home', {
 				controller: 'PotController',
-				templateUrl: 'views/pot.html'
+				templateUrl: 'views/home.html'
 			})
 			.when('/group', {
 				controller: 'GroupController',
@@ -30,7 +30,7 @@
             })
 			.otherwise({
 				controller: 'PotController',
-				templateUrl: 'views/pot.html'
+				templateUrl: 'views/home.html'
 			});
 	}
 
