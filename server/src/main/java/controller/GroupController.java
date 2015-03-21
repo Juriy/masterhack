@@ -22,14 +22,10 @@ public class GroupController {
 
     private Gson gson = new Gson();
 
-    @RequestMapping(value = "/groups",method = RequestMethod.POST)
-    public @ResponseBody String createGroup() {
-        System.out.println("Create new group");
-        Group group = new Group();
-        String groupId = "group" + groupCounter++;
-        group.setGroupId(groupId);
-        database.saveGroup(group);
-        return groupId;
+    @RequestMapping(value = "/groups",method = RequestMethod.GET)
+    public @ResponseBody Collection<Group> createGroup() {
+        System.out.println("Return all groups");
+        return database.getGroups();
     }
 
     @RequestMapping(value = "/groups/{groupName}",method = RequestMethod.PUT)

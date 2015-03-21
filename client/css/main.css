@@ -7,6 +7,33 @@ body {
     text-align: center;
 }
 
+<<<<<<< HEAD
+.h2{
+    background: #333333;
+    color: #ffffff;
+    width: 100%;
+}
+
+.user-thmb {
+    width:150px;
+}
+
+#restaurant-img {
+    background-image: url('../img/rest-img.jpg');
+}
+
+#pot-container
+{
+    background-image: url('../img/restaurant.jpg');
+}
+
+#logo {
+    background-image: url('../img/logo.jpg') ;
+    width: 175px;
+    height: 50px;
+    float: left;
+}
+
 .header {
     height: 55px;
     background: #007069 url('/img/header@2x.jpg') no-repeat;
@@ -43,3 +70,4 @@ body {
 /*   */
 /*   */
 /*   */
+

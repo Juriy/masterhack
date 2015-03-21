@@ -1,1 +1,13 @@
-GROUP
+<div class="col-lg-12">
+    <div ng-repeat="user in group">
+        <div class="row">
+            <div class="col-lg-2">
+            <img class="user-thmb" ng-src="{{user.pictureUrl}}">
+            </div>
+            <h2>{{user.firstName}}</h2>
+
+            <h3>{{user.lastName}}</h3>
+            <button ng-click="addToParty(user)">Add to party</button>
+        </div>
+    </div>
+</div>

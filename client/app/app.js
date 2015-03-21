@@ -8,9 +8,9 @@
 
 	function configureRoutes($routeProvider) {
 		$routeProvider
-			.when('/pot', {
+			.when('/home', {
 				controller: 'PotController',
-				templateUrl: 'views/pot.html'
+				templateUrl: 'views/home.html'
 			})
 			.when('/group', {
 				controller: 'GroupController',
@@ -22,11 +22,15 @@
 			})
 			.when('/user/:id', {
 				controller: 'UserDetailsController',
-				templateUrl: 'views/book-details.html'
+				templateUrl: 'views/user-details.html'
 			})
+            .when('profile', {
+                controller: 'UserDetailsController',
+                templateUrl: 'views/user-details.html'
+            })
 			.otherwise({
 				controller: 'PotController',
-				templateUrl: 'views/pot.html'
+				templateUrl: 'views/home.html'
 			});
 	}
 

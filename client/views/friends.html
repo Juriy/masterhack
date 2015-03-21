@@ -1,1 +1,43 @@
-FRIENDS
+<div class="col-lg-6">
+<span class="label label-default">PUBLIC SPLITSIES</span>
+
+    <div ng-repeat="user in unselected">
+        <div class="row">
+            <div class="col-lg-2">
+                <img class="user-thmb" ng-src="{{user.pictureUrl}}">
+            </div>
+            <div class="col-lg-8">
+                <h2>{{user.firstName}}</h2>
+                <h3>{{user.lastName}}</h3>
+
+            </div>
+            <div class="col-lg-2">
+                <button class="btn btn-default" ng-click="addToParty(user)">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div ng-if="showParty()">
+        <h2>ACTIVE SPLITSIES</h2>
+
+        <div ng-repeat="sUser in selected">
+            <div class="row">
+                <div class="col-lg-2">
+                    <img class="user-thmb" ng-src="{{sUser.pictureUrl}}">
+                </div>
+                <div class="col-lg-8">
+                    <h2>{{sUser.firstName}}</h2>
+                    <h3>{{sUser.lastName}}</h3>
+
+                </div>
+                <div class="col-lg-2">
+            <button class="btn btn-default" ng-click="removeFromParty(sUser)">Remove</button></div>
+
+        </div>
+        </div>
+        <button ng-click="gotoParty()">MAKE SPLITSIE</button>
+
+    </div>
+</div>

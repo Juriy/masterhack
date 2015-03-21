@@ -4,8 +4,11 @@
 		.service('SessionService', SessionService);
 
 	function SessionService() {
-		this.getId = function {
-			return 12;
+		var user_id = 12;
+
+        this.getId = function() {
+			return user_id;
 		}
+
 	}
 })();
