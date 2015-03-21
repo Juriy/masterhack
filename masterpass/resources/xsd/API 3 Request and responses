@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:PrecheckoutDataRequest xmlns:ns2="urn:mastercard.com:ppol:switchapi:types">
+    <ns2:PairingDataTypes>
+        <PairingDataType>
+            <Type>ADDRESS</Type>
+        </PairingDataType>
+        <PairingDataType>
+            <Type>PROFILE</Type>
+        </PairingDataType>
+        <PairingDataType>
+            <Type>CARD</Type>
+        </PairingDataType>
+    </ns2:PairingDataTypes>
+</ns2:PrecheckoutDataRequest>
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:PrecheckoutDataResponse
+    xmlns:ns2="urn:mastercard.com:ppol:switchapi:types">
+    <ns2:PrecheckoutData>
+        <ns2:Cards>
+            <ns2:CardId>2</ns2:CardId>
+            <ns2:BrandId>visa</ns2:BrandId>
+            <ns2:BrandName>Visa</ns2:BrandName>
+            <ns2:CardHolderName>test test</ns2:CardHolderName>
+            <ns2:LastFour>1111</ns2:LastFour>
+            <ns2:CardAlias></ns2:CardAlias>
+            <ns2:ExpiryMonth>03</ns2:ExpiryMonth>
+            <ns2:ExpiryYear>2016</ns2:ExpiryYear>
+        </ns2:Cards>
+        <ns2:Contact>
+            <ns2:FirstName>test</ns2:FirstName>
+            <ns2:Country>
+                <Code>US</Code>
+            </ns2:Country>
+            <ns2:EmailAddress>test@mc.com</ns2:EmailAddress>
+            <ns2:PhoneNumber>1 3142121234null</ns2:PhoneNumber>
+        </ns2:Contact>
+        <ns2:ShippingAddresses>
+            <Line1>123 main st</Line1>
+            <Line2></Line2>
+            <City>sdfsdf</City>
+            <CountrySubdivision>US-AR</CountrySubdivision>
+            <PostalCode>32165</PostalCode>
+            <Country>US</Country>
+            <ns2:AddressId>6</ns2:AddressId>
+            <ns2:RecipientName>test test</ns2:RecipientName>
+            <ns2:RecipientPhoneNumber></ns2:RecipientPhoneNumber>
+            <ns2:SelectedAsDefault>true</ns2:SelectedAsDefault>
+            <ns2:ShippingAlias></ns2:ShippingAlias>
+        </ns2:ShippingAddresses>
+        <ns2:ShippingAddresses>
+            <Line1>123 main st</Line1>
+            <Line2></Line2>
+            <Line3></Line3>
+            <City>dfsdfsf</City>
+            <CountrySubdivision>US-AR</CountrySubdivision>
+            <PostalCode>32165</PostalCode>
+            <Country>US</Country>
+            <ns2:AddressId>8</ns2:AddressId>
+            <ns2:RecipientName>test test</ns2:RecipientName>
+            <ns2:RecipientPhoneNumber></ns2:RecipientPhoneNumber>
+            <ns2:SelectedAsDefault>false</ns2:SelectedAsDefault>
+            <ns2:ShippingAlias></ns2:ShippingAlias>
+        </ns2:ShippingAddresses>
+        <ns2:PrecheckoutTransactionId>4sj4y21-19l9is-hvzihmna-1-hvzj5puk-1to</ns2:PrecheckoutTransactionId>
+        <ns2:WalletId>Mobile</ns2:WalletId>
+        <ns2:ConsumerWalletId>5</ns2:ConsumerWalletId>
+    </ns2:PrecheckoutData>
+    <ns2:AccessToken>long_Mobile:5</ns2:AccessToken>
+</ns2:PrecheckoutDataResponse>
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExpressCheckoutRequest>
+    <MerchantCheckoutId>4sj4y1dngp2vbhtuk5qz61htukhrlqy4</MerchantCheckoutId>
+    <PrecheckoutTransactionId>4sj4y21-19l9is-hvzihmna-1-hvzj94s6-1uc</PrecheckoutTransactionId>
+    <OrderAmount>0</OrderAmount>
+    <CardId>2</CardId>
+    <ShippingAddressId>8</ShippingAddressId>
+    <WalletId>Mobile</WalletId>
+    <AdvancedCheckoutOverride>false</AdvancedCheckoutOverride>
+    <OriginUrl></OriginUrl>
+</ExpressCheckoutRequest>
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExpressCheckoutResponse>
+    <Checkout/>
+    <LongAccessToken>long_Mobile:5</LongAccessToken>
+    <Errors>
+        <Error>
+            <Description>3DS not completed for given transactionId - 4sj4y21-19l9is-hvzihmna-1-hvzj94s6-1uc</Description>
+            <ReasonCode>SYSTEM_ERROR</ReasonCode>
+            <Recoverable>true</Recoverable>
+            <Source>3DS Needed</Source>
+        </Error>
+    </Errors>
+</ExpressCheckoutResponse>
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExpressCheckoutResponse>
+    <Checkout>
+        <Card>
+            <BrandId>visa</BrandId>
+            <BrandName>Visa</BrandName>
+            <AccountNumber>4111111111111111</AccountNumber>
+            <BillingAddress>
+                <City>dfsdfsf</City>
+                <Country>US</Country>
+                <CountrySubdivision>US-AR</CountrySubdivision>
+                <Line1>123 main st</Line1>
+                <Line2></Line2>
+                <Line3></Line3>
+                <PostalCode>32165</PostalCode>
+            </BillingAddress>
+            <CardHolderName>test test</CardHolderName>
+            <ExpiryMonth>3</ExpiryMonth>
+            <ExpiryYear>2016</ExpiryYear>
+        </Card>
+        <Contact>
+            <FirstName>test test</FirstName>
+            <LastName>test</LastName>
+            <DateOfBirth>
+                <Year>0</Year>
+                <Month>0</Month>
+                <Day>0</Day>
+            </DateOfBirth>
+            <EmailAddress>test@mc.com</EmailAddress>
+            <PhoneNumber>3142121234</PhoneNumber>
+        </Contact>
+        <ShippingAddress>
+            <City>dfsdfsf</City>
+            <Country>US</Country>
+            <CountrySubdivision>US-AR</CountrySubdivision>
+            <Line1>123 main st</Line1>
+            <Line2></Line2>
+            <Line3></Line3>
+            <PostalCode>32165</PostalCode>
+            <RecipientName>test test</RecipientName>
+            <RecipientPhoneNumber>3142121234</RecipientPhoneNumber>
+        </ShippingAddress>
+        <AuthenticationOptions>
+            <AuthenticateMethod>3DS</AuthenticateMethod>
+            <CAvv>AAABAWFlmQAAAABjRWWZEEFgFz+=</CAvv>
+            <EciFlag>05</EciFlag>
+            <PaResStatus>Y</PaResStatus>
+            <SignatureVerification>Y</SignatureVerification>
+            <Xid>Y1RJSkVxRlA5eU9EUFJtYjQ4eTA=</Xid>
+        </AuthenticationOptions>
+        <PreCheckoutTransactionId>4sj4y21-19l9is-hvzihmna-1-hvzjcd05-1vg</PreCheckoutTransactionId>
+    </Checkout>
+    <LongAccessToken>long_Mobile:5</LongAccessToken>
+</ExpressCheckoutResponse>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0">
+    <xs:include schemaLocation="CommonTypes.xsd"/>
+    <xs:element name="CardBrandsResponse" type="CardBrandsResponse"/>
+    <xs:complexType name="CardBrandsResponse">
+        <xs:sequence>
+            <xs:element name="CardBrands" type="CardBrands"/>
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ShoppingCartResults" type="ShoppingCartResults"/>
+    <xs:complexType name="ShoppingCartResults">
+        <xs:sequence>
+            <xs:element name="OAuthToken" type="xs:string"/>
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+            <xs:element name="ShoppingCart" type="ShoppingCart"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="UserLocale" type="UserLocale"/>
+    <xs:complexType name="UserLocale">
+        <xs:sequence>
+            <xs:element name="Locale" type="xs:string" minOccurs="0"/>
+            <xs:element name="Country" type="xs:string" minOccurs="0"/>
+            <xs:element name="Language" type="xs:string" minOccurs="0"/>
+            <xs:element name="LocaleModified" type="xs:boolean" default="false"/>
+            <xs:element name="GeneratedFromCookie" type="xs:boolean" default="false"/>
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="WalletProviderSearch" type="WalletProviderSearch"/>
+    <xs:complexType name="WalletProviderSearch">
+        <xs:sequence>
+            <xs:element name="Country" type="CountryCode" minOccurs="0"/>
+            <xs:element name="StartIndex" type="xs:int" minOccurs="0"/>
+            <xs:element name="NumberOfResults" type="xs:int" minOccurs="0"/>
+            <xs:element name="WalletProviderName" type="xs:string" minOccurs="0"/>
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="WalletProviderSearchResults" type="WalletProviderSearchResults"/>
+    <xs:complexType name="WalletProviderSearchResults">
+        <xs:sequence>
+            <xs:element name="TotalResults" type="xs:int"/>
+            <xs:element name="WalletProvider" type="WalletProvider" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="MerchantInitializationRequest" type="MerchantInitializationRequest"/>
+    <xs:complexType name="MerchantInitializationRequest">
+        <xs:sequence>
+            <xs:element name="OAuthToken" type="xs:string"/>
+            <xs:element name="PreCheckoutTransactionId" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="OriginUrl" type="xs:string" />
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="MerchantInitializationResponse" type="MerchantInitializationResponse"/>
+    <xs:complexType name="MerchantInitializationResponse">
+        <xs:sequence>
+            <xs:element name="OAuthToken" type="xs:string"/>
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="AuthorizePairingRequest" type="AuthorizePairingRequest"/>
+    <xs:complexType name="AuthorizePairingRequest">
+        <xs:sequence>
+            <xs:element name="PairingDataTypes" type="PairingDataTypes"/>
+            <xs:element name="OAuthToken" type="xs:string"/>
+            <xs:element name="MerchantCheckoutId" type="xs:string"/>
+            <xs:element name="ConsumerWalletId" type="xs:string"/>
+            <xs:element name="WalletId" type="xs:string"/>
+            <xs:element name="ExpressCheckout" type="xs:boolean"/>
+            <xs:element name="ConsumerCountry" type="Country"/>
+            <xs:element name="SilentPairing" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="AuthorizePairingResponse" type="AuthorizePairingResponse"/>
+    <xs:complexType name="AuthorizePairingResponse">
+        <xs:sequence>
+            <xs:element name="VerifierToken" type="xs:string"/>
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ConnectedMerchantsRequest" type="ConnectedMerchantsRequest"/>
+    <xs:complexType name="ConnectedMerchantsRequest">
+        <xs:sequence>
+            <xs:element name="ConsumerWalletId" type="xs:string"/>
+            <xs:element name="WalletId" type="xs:string"/>
+            <xs:element name="StartDate" type="xs:dateTime"/>
+            <xs:element name="EndDate" type="xs:dateTime"/>
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ConnectionHistoryRequest" type="ConnectionHistoryRequest"/>
+    <xs:complexType name="ConnectionHistoryRequest">
+        <xs:sequence>
+            <xs:element name="MerchantCheckoutId" type="xs:string"/>
+            <xs:element name="StartDate" type="xs:dateTime"/>
+            <xs:element name="EndDate" type="xs:dateTime"/>
+            <xs:element name="WalletId" type="xs:string"/>
+            <xs:element name="ConsumerWalletId" type="xs:string"/>
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="DeletePairingRequest" type="DeletePairingRequest"/>
+    <xs:complexType name="DeletePairingRequest">
+        <xs:sequence>
+            <xs:element name="MerchantName" type="xs:string"/>
+            <xs:element name="ConsumerWalletId" type="xs:string"/>
+            <xs:element name="WalletId" type="xs:string"/>
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+            <xs:element name="ConnectionId" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="DeletePairingResponse" type="DeletePairingResponse"/>
+    <xs:complexType name="DeletePairingResponse">
+        <xs:sequence>
+            <xs:element name="StatusMsg" type="xs:string"/>
+            <xs:element name="Errors" type="Errors"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="MerchantPermissionResponse" type="MerchantPermissionResponse"/>
+    <xs:complexType name="MerchantPermissionResponse">
+        <xs:sequence>
+            <xs:element name="ConnectPermitted" type="xs:boolean"/>
+            <xs:element name="ExpressCheckoutPermitted" type="xs:boolean"/>
+            <xs:element name="PairingDataTypes" type="PairingDataTypes"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:element name="MerchantParametersRequest" type="MerchantParametersRequest"/>
+    <xs:complexType name="MerchantParametersRequest">
+        <xs:sequence>
+            <xs:element name="MerchantCheckoutIdentifier" type="xs:string" />
+            <xs:element name="RequestBasicCheckout" type="xs:boolean" />
+            <xs:element name="OauthToken" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+            <xs:element name="PreCheckoutTransactionId" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+            <xs:element name="OriginUrl" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+            <xs:element name="ReturnUrl" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+            <xs:element name="MerchantCallbackUrl" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+            <xs:element name="QueryString" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="MerchantParametersResponse" type="MerchantParametersResponse"/>
+    <xs:complexType name="MerchantParametersResponse">
+        <xs:sequence>
+            <xs:element name="MerchantParametersId" type="xs:string"/>
+            <xs:element name="MerchantCallbackUrl" type="xs:string" />
+            <xs:element name="ReturnUrl" type="xs:string" />
+            <xs:element name="MerchantSuppressSignUp" type="xs:string" minOccurs="0"/>
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:element name="MerchantPermissionRequest" type="MerchantPermissionRequest"/>
+    <xs:complexType name="MerchantPermissionRequest">
+        <xs:sequence>
+            <xs:element name="MerchantCheckoutId" type="xs:string"/>
+            <xs:element name="OAuthToken" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="MerchantPermissionResponseWrapper" type="MerchantPermissionResponseWrapper"/>
+    <xs:complexType name="MerchantPermissionResponseWrapper">
+        <xs:sequence>
+            <xs:element name="MerchantPermissionResponse" type="MerchantPermissionResponse"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ShoppingCartResultsWrapper" type="ShoppingCartResultsWrapper"/>
+    <xs:complexType name="ShoppingCartResultsWrapper">
+        <xs:sequence>
+            <xs:element name="ShoppingCartResults" type="ShoppingCartResults"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="UserLocaleWrapper" type="UserLocaleWrapper"/>
+    <xs:complexType name="UserLocaleWrapper">
+        <xs:sequence>
+            <xs:element name="UserLocale" type="UserLocale"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="WalletProviderSearchResultsWrapper" type="WalletProviderSearchResultsWrapper"/>
+    <xs:complexType name="WalletProviderSearchResultsWrapper">
+        <xs:sequence>
+            <xs:element name="WalletProviderSearchResults" type="WalletProviderSearchResults"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ChainedTokenRequest" type="ChainedTokenRequest"/>
+    <xs:complexType name="ChainedTokenRequest">
+        <xs:sequence>
+            <xs:element name="OAuthToken" type="xs:string"/>
+            <xs:element name="MerchantCheckoutIdentifier" type="xs:string"/>
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ChainedTokenResponse" type="ChainedTokenResponse"/>
+    <xs:complexType name="ChainedTokenResponse">
+        <xs:sequence>
+            <xs:element name="RequestToken" type="xs:string"/>
+            <xs:element name="VerifierToken" type="xs:string"/>
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ConnectedMerchantsResponse" type="ConnectedMerchantsResponse"/>
+    <xs:complexType name="ConnectedMerchantsResponse">
+        <xs:sequence>
+            <xs:element name="Merchants" type="Merchant" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="ExtensionPoint" type="ExtensionPoint" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
