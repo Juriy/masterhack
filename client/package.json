@@ -1,0 +1,46 @@
+{
+  "name": "Masterhack",
+  "version": "0.0.1",
+  "description": "Hackathon entry for MasterCard HK Event",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Juriy/bookstore.git"
+  },
+  "keywords": [
+    "MasterCard"
+  ],
+
+  "homepage": "https://github.com/Juriy/masterhack",
+  "authors": [
+    "Bogdan Tach",
+    "Juriy Bura <juriy.bura@gmail.com>",
+    "Nick Turunov",
+    "Mike Jessick",
+    "Tyler Pritchard"
+  ],
+
+  "license": "ISC",
+  
+  "bugs": {
+    "url": "https://github.com/Juriy/masterhack/issues"
+  },
+
+  "homepage": "https://github.com/Juriy/masterhack",
+  
+  "dependencies": {
+  },
+  
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-jasmine": "^0.8.1",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-usemin": "^3.0.0"
+  }
+}
