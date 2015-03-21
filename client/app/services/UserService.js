@@ -5,9 +5,9 @@
 
 
 	function UserService($http, $q) {
-		this.getUsers = function() {
+		this.getFriends = function() {
 			return $http({
-				url: '/api/users',
+				url: '/api/12/friends',
 				method: 'GET',
 				params: {
 					
