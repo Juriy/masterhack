@@ -14,7 +14,7 @@ import java.util.Collection;
 @RestController()
 public class UserController {
 
-    private static int userCounter = 1;
+    private static int userCounter = 10;
     private Database database = DatabaseFactory.getDatabase();
     private Gson gson = new Gson();
 

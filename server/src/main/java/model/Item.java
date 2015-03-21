@@ -9,6 +9,15 @@ public class Item {
     private double itemPrice;
     private String itemDescription;
 
+    public Item() {
+    }
+
+    public Item(String itemId, double itemPrice, String itemDescription) {
+        this.itemId = itemId;
+        this.itemPrice = itemPrice;
+        this.itemDescription = itemDescription;
+    }
+
     public String getItemId() {
         return itemId;
     }

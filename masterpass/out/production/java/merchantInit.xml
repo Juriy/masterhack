@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<MerchantInitializationRequest xmlns="urn:mastercard.com:ppol:switchapi:types">
+<OAuthToken></OAuthToken>
+<OriginUrl></OriginUrl>
+</MerchantInitializationRequest>
