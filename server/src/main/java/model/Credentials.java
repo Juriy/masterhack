@@ -13,6 +13,7 @@ public class Credentials {
     private Boolean suppressShippingAddressEnable;
     private Boolean loyaltyEnabled;
     private Boolean requestBasicCheckout;
+    private String version = "v6";
 
     public String getRequestToken() {
         return requestToken;
@@ -76,5 +77,13 @@ public class Credentials {
 
     public void setRequestBasicCheckout(Boolean requestBasicCheckout) {
         this.requestBasicCheckout = requestBasicCheckout;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 }
