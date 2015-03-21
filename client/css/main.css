@@ -94,14 +94,40 @@ body {
 }
 
 .bill-values {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 20px;
     font-family: Avangmi, serif;
+    text-align: left;
     height: 130px;
 }
+
+.dollar-sign {
+    color: #d83037;
+    float: left;
+    font-size: 50px;
+    margin-top: -15px;
+}
+
+.current-due-dollars {
+    font-size: 90px;
+    margin-top: -20px;
+    color: #d83037;
+    float: left;
+}
+
+.current-due-cents {
+    font-size: 50px;
+    margin-top: -10px;
+    color: #d83037;
+    float: left;
+}
+
 
 /* colorA: ed9801  */
 /* colorB: d73037  */
 /* colorC:   */
-/*   */
+/* red:     d83037  */
 /*   */
 /*   */
 
