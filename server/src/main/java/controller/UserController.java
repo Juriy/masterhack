@@ -14,11 +14,16 @@ public class UserController {
     private Database database;
 
     @RequestMapping(value = "/users")
-    public String login(User userInfo) {
-//        userInfo.setUserId("user" + userCounter++);
-//        database.saveUser(userInfo);
-//        return userInfo.getUserId();
-        return "user" + userCounter++;
+    public String login() {
+        String userId = "user" + userCounter++;
+        String userName = userId + "_name";
+        String userSurname = userId + "_surname";
+        User user = new User();
+        user.setUserId(userId);
+        user.setSecondName(userSurname);
+        user.setFirstName(userName);
+        database.saveUser(user);
+        return userId;
     }
 
     @RequestMapping("/users/{userId}")
