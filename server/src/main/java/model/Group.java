@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -10,11 +11,12 @@ import java.util.Map;
 public class Group {
 
     private Collection<String> usersId;
-    private Map<String, Double> usersBill;
+    private Cart groupCart;
     private String groupId;
 
     public Group() {
         usersId = new ArrayList<>();
+        groupCart = new Cart();
     }
 
     public Collection<String> getUsers() {
@@ -35,5 +37,17 @@ public class Group {
 
     public void addUser(Collection<String> newUsers) {
         usersId.addAll(newUsers);
+    }
+
+    public void addItemInCart(Item item){
+        groupCart.addItem(item);
+    }
+
+    public Cart getCart(){
+        return groupCart;
+    }
+
+    public void resetCart(){
+        groupCart = new Cart();
     }
 }

@@ -16,6 +16,13 @@ public class Database {
 
     @Deprecated
     Database() {
+        users.put("user1", new User("Andrew", "Scotch", "https://github.com/fluidicon.png", "user1"));
+        users.put("user2", new User("Bobby", "Williams", "https://github.com/fluidicon.png", "user2"));
+        users.put("user3", new User("Charly", "Chark", "https://github.com/fluidicon.png", "user3"));
+        users.put("user4", new User("Danial", "Koh", "https://github.com/fluidicon.png", "user4"));
+        users.put("user5", new User("Eagle", "Bold", "https://github.com/fluidicon.png", "user5"));
+
+
     }
 
     public synchronized void saveUser(User user){

@@ -3,6 +3,7 @@ package controller;
 import db.Database;
 import db.DatabaseFactory;
 import model.Group;
+import model.Item;
 import model.User;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,8 @@ public class GroupController {
     private Database database = DatabaseFactory.getDatabase();
 
     @RequestMapping(value = "/groups",method = RequestMethod.POST)
-    public String createGroup() {
+
+    public @ResponseBody String createGroup() {
         System.out.println("Create new group");
         Group group = new Group();
         String groupId = "group" + groupCounter++;
@@ -37,7 +39,7 @@ public class GroupController {
     }
 
     @RequestMapping(value = "/groups/{groupId}",method = RequestMethod.GET)
-    public Collection<User> getGroupUsers(@PathVariable String groupId) {
+    public @ResponseBody Collection<User> getGroupUsers(@PathVariable String groupId) {
         System.out.println("add users to group");
         Group group = database.getGroup(groupId);
         List<User> users = new ArrayList<>();
@@ -45,5 +47,12 @@ public class GroupController {
             users.add(database.getUser(userId));
         }
         return users;
+    }
+
+    @RequestMapping(value = "/groups/{groupId}/items",method = RequestMethod.POST)
+    public void addItemToCart(@PathVariable String groupId, @RequestBody Item item) {
+        System.out.println("add item to group's cart");
+        Group group = database.getGroup(groupId);
+        group.addItemInCart(item);
     }
 }

@@ -16,12 +16,13 @@ public class UserController {
     private static int userCounter = 1;
     private Database database = DatabaseFactory.getDatabase();
 
-    @RequestMapping(value = "/users")
-    public String login() {
+    @RequestMapping(value = "/users", produces="application/json")
+    public @ResponseBody String login() {
         System.out.println("Create new user");
         String userId = "user" + userCounter++;
         String userName = userId + "_name";
         String userSurname = userId + "_surname";
+        String userPicture = userId + "_pic";
         User user = new User();
         user.setUserId(userId);
         user.setSecondName(userSurname);
@@ -30,14 +31,23 @@ public class UserController {
         return userId;
     }
 
+//    [{"firstName":"firstName","secondName":"surname","pictureUrl":"picUrl","userId":"userId"}]
+    @RequestMapping(value = "/users/upload", method = RequestMethod.POST)
+    public void upload(@RequestBody Collection<User> users) {
+        System.out.println("Uploading new users in db");
+        for(User u:users){
+            database.saveUser(u);
+        }
+    }
+
     @RequestMapping(value = "/users/{userId}/friends", method = RequestMethod.GET)
-    public Collection<User> getFriends(@PathVariable String userId) {
+    public @ResponseBody Collection<User> getFriends(@PathVariable String userId) {
         System.out.println("querying for friend");
         return database.getUsersFriends(userId);
     }
 
     @RequestMapping(value = "/users/{userId}", method = RequestMethod.GET)
-    public User getProfile(@PathVariable String userId) {
+    public @ResponseBody User getProfile(@PathVariable String userId) {
         return database.getUser(userId);
     }
 
