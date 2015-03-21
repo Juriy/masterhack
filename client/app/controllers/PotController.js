@@ -5,6 +5,8 @@
         .controller('PotController', PotController);
 
     function PotController($scope) {
+        $scope.pot = ''
+
     }
 
 })();

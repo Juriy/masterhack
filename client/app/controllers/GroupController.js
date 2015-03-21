@@ -4,7 +4,13 @@
         .module('masterhack')
         .controller('GroupController', GroupController);
 
-    function GroupController($scope) {
+    function GroupController($scope, GroupService) {
+
+        $scope.group = GroupService.getGroup();
+
+
+
+
     }
 
 })();
