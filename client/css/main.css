@@ -181,6 +181,7 @@ body {
     background-size: 100%;
 }
 
+<<<<<<< HEAD
 .friends .banner {
     height: 120px;
     background-image: url("../img/addfriends-banner.jpg");
@@ -221,6 +222,15 @@ body {
     height: 30px;
 }
 
+=======
+/* Mom MOCK */
+.login-mock {
+    width: 375px;
+    height: 667px;
+    background-image: url("/img/mom.jpg");
+    background-size: 100%;
+}
+>>>>>>> 72a4d45487b628550511c101461c4160ff3473e3
 
 .friends .friend-name {
     font-size: 20px;
