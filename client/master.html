@@ -28,19 +28,21 @@ var xhr = new XMLHttpRequest();
 xhr.open('POST', 'http://10.131.210.166:8080/masterpass/12', true);
 xhr.onload = function () {
     var opts = JSON.parse(this.responseText);
-    opts.requestExpressCheckout = true;
-   
+    console.log(opts);
+    //opts.requestExpressCheckout = true;
+    opts.requestedDataTypes = "CARD";
 
     delete opts.callbackUrl;
-    opts.failureCallback = function() {
+    opts.failureCallback = function(data) {
         alert("Failure");
     };
 
-    opts.successCallback = function() {
+    opts.successCallback = function(data) {
+        console.log(data);
         alert("Success");
     };
 
-    opts.cancelCallback = function() {
+    opts.cancelCallback = function(data) {
         alert("Cancel");
     };
 
