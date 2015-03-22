@@ -17,7 +17,9 @@
 
         });
 
-
+        $scope.gotoFriends = function(){
+            $location.url('/friends')
+        }
 
         GroupService
             .getGroups()
