@@ -1,13 +1,43 @@
-<div class="col-lg-12">
-    <div ng-repeat="user in group">
-        <div class="row">
-            <div class="col-lg-2">
-            <img class="user-thmb" ng-src="{{user.pictureUrl}}">
-            </div>
-            <h2>{{user.firstName}}</h2>
+<div class="col-lg-5">
+<div class="main">
+    <div class="header"></div>
+    <div class="banner"></div>
+    <div class="bill-summary">
+        <div class="bill-values">
+            <div>Current Due</div>
+            <div class="dollar-sign">$</div>
+            <div class="value-dollars">245</div>
+            <div class="value-cents">.00</div>
 
-            <h3>{{user.lastName}}</h3>
-            <button ng-click="addToParty(user)">Add to party</button>
+            <div class="payed-total">
+                <div>Amount Paid</div>
+                <div class="amount-paid small-price">
+                    <span class="dollar-sign">$</span>
+                    <span class="value-dollars">245</span>
+                    <span class="value-cents">.00</span>
+                </div>
+                <div style="clear: left">Total Bill</div>
+                <div class="total-bill small-price">
+                    <span class="dollar-sign">$</span>
+                    <span class="value-dollars">20</span>
+                    <span class="value-cents">.00</span>
+                </div>
+            </div>
         </div>
+        <div class="transaction-buttons"></div>
     </div>
+    <div class="tabs-transaction"></div>
+    <div class="items">
+        <ul>
+            <li class="beer"></li>
+            <li class="beer"></li>
+            <li class="beer"></li>
+            <li class="payment"></li>
+            <li class="beer"></li>
+            <li class="beer"></li>
+            <li class="beer"></li>
+        </ul>
+
+    </div>
+</div>
 </div>

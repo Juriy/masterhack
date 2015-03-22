@@ -1,43 +1,44 @@
-<div class="col-lg-6">
-<span class="label label-default">PUBLIC SPLITSIES</span>
+<div class="col-lg-5">
 
-    <div ng-repeat="user in unselected">
-        <div class="row">
-            <div class="col-lg-2">
-                <img class="user-thmb" ng-src="{{user.pictureUrl}}">
-            </div>
-            <div class="col-lg-8">
-                <h2>{{user.firstName}}</h2>
-                <h3>{{user.lastName}}</h3>
 
-            </div>
-            <div class="col-lg-2">
-                <button class="btn btn-default" ng-click="addToParty(user)">Add</button>
-            </div>
+    <div class="friends">
+        <!--<div class="header"></div>-->
+        <div class="header" ng-click="gotoGroup()"></div>
+        <div class="banner"></div>
+        <div class="near">
+            <ul>
+                <li ng-repeat="user in unselected">
+                    <input type="checkbox" />
+                    <img src="../client/img/portrait-{{$index%3+1}}.jpg" />
+                    <div>
+                        <div class="friend-name">{{user.firstName}}&nbsp;{{user.lastName}}</div>
+                        <div class="friend-distance">20 feet</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="other-friends"></div>
+        <div class="near" style="height: 125px">
+            <ul>
+                <li>
+                    <input type="checkbox" />
+                    <img src="../client/img/portrait-1.jpg" />
+                    <div>
+                        <div class="friend-name">Mike Jessic</div>
+                        <div class="friend-distance">20 feet</div>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" />
+                    <img src="../client/img/portrait-1.jpg" />
+                    <div>
+                        <div class="friend-name">Mike Jessic</div>
+                        <div class="friend-distance">20 feet</div>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 
-    <hr>
 
-    <div ng-if="showParty()">
-        <h2>ACTIVE SPLITSIES</h2>
-
-        <div ng-repeat="sUser in selected">
-            <div class="row">
-                <div class="col-lg-2">
-                    <img class="user-thmb" ng-src="{{sUser.pictureUrl}}">
-                </div>
-                <div class="col-lg-8">
-                    <h2>{{sUser.firstName}}</h2>
-                    <h3>{{sUser.lastName}}</h3>
-
-                </div>
-                <div class="col-lg-2">
-            <button class="btn btn-default" ng-click="removeFromParty(sUser)">Remove</button></div>
-
-        </div>
-        </div>
-        <button ng-click="gotoParty()">MAKE SPLITSIE</button>
-
-    </div>
 </div>
