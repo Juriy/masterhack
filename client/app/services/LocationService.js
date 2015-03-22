@@ -4,11 +4,11 @@
         .module('masterhack')
         .service('LocationService', LocationService);
 
-    function LocationService($http) {
-        this.scanNearby = function(latitude, longtitude){
+    function LocationService($http, config) {
+        this.scanNearby = function(latitude, longitude){
             return $http({
                 method: 'GET',
-                url: config.api + '/restaurants?latitude=' + latitude + '&longtitude=' + longtitude
+                url: config.api + '/restaurants?latitude=' + latitude + '&longitude=' + longitude
 
             })
         }

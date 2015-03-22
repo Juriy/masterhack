@@ -5,13 +5,11 @@
 
 
     function MasterPassService($http, $q, config) {
-        this.getPaymentObject = function() {
+        this.getPaymentObject = function(items) {
             return $http({
                 url: config.api + '/masterpass',
-                method: 'GET',
-                params: {
-
-                }
+                method: 'POST',
+                data: items
             });
 
         };

@@ -10,7 +10,7 @@
 
 
         <div class="" ng-repeat="gr in groups">
-            <div class="row splitsie">
+            <div class="row">
                 <div class="col-lg-2">
                     <img class="thmb" ng-src="../client/img/{{gr.pictureUrl}}.png">
                 </div>
@@ -31,5 +31,18 @@
         <span class="col-lg-12 gray-bar">
             public splitsies
         </span>
+
+            <div class="row">
+                <div class="col-lg-2">
+                    <img class="thmb" ng-src="../client/img/smokehouse.png">
+                </div>
+                <div class="col-lg-6 text-left">
+                    <h3>{{places.name}}</h3>
+                    <h4>{{places.distance | number:2}} km away</h4>
+                </div>
+                <div class="col-lg-2 text-center">
+                    <h2>10% <sup>off</sup></h2>
+                </div>
+            </div>
     </div>
 </div>

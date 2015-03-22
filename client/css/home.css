@@ -23,16 +23,20 @@
 
 }
 
-.splitsie:hover {
+.splitsie {
     cursor: pointer;
     background-color: #ffffff;
+    height: 72px;
+    width: 100%;
+    display: block;
 
+    border: 1px solid #eeeeee;
 }
 
 .thmb {
     height: 70px;
     border: 1px solid #eeeeee;
-    margin: 10px;
+    margin: 1px;
 }
 
 .timestamp {

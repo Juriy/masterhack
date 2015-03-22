@@ -10,6 +10,6 @@ public class MasterPassTest {
 
     @Test
     public void test() throws Exception {
-        pass.getCredentials();
+        pass.getCredentials(5);
     }
 }
