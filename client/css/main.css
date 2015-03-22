@@ -175,6 +175,13 @@ body {
     background-size: 100%;
 }
 
+/* Mom MOCK */
+.login-mock {
+    width: 375px;
+    height: 667px;
+    background-image: url("/img/mom.jpg");
+    background-size: 100%;
+}
 
 
 /* colorA: ed9801  */
