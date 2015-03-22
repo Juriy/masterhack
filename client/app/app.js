@@ -33,8 +33,8 @@
                 templateUrl: 'views/checkout.html'
             })
 			.otherwise({
-				controller: 'HomeController',
-				templateUrl: 'views/home.html'
+				controller: 'LoginController',
+				templateUrl: 'views/login.html'
 			});
 	}
 
