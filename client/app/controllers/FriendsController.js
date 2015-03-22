@@ -20,10 +20,10 @@
                     $scope.unselected.splice(index ,1);
                 }
 
-                $scope.removeFromParty = function (user) {
-                    $scope.selected.push(user);
+                $scope.toggleSelection = function (user) {
 
                     var index = $scope.unselected.indexOf(user);
+                    if(index>1)
                     $scope.unselected.splice(index ,1);
                 }
 
@@ -33,8 +33,8 @@
 
 			});
 
-        $scope.gotoParty = function (){
-            GroupService.setGroup($scope.selected);
+        $scope.gotoGroup = function (){
+            //GroupService.setGroup($scope.selected);
             $location.url('/group');
         }
 

@@ -11,8 +11,7 @@
 body {
     background-color: #e9e8e4;
     max-width: 400px;
-    font-family: 'AvangmiLight';
-
+    font-family: AvangmiLight, serif;
 }
 
 .main {
@@ -30,16 +29,16 @@ body {
 }
 
 #restaurant-img {
-    background-image: url('/img/rest-img.jpg');
+    background-image: url('../img/rest-img.jpg');
 }
 
 #pot-container
 {
-    background-image: url('/img/restaurant.jpg');
+    background-image: url('../client/img/restaurant.jpg');
 }
 
 #logo {
-    background-image: url('/img/logo.jpg') ;
+    background-image: url('../client/img/logo.jpg') ;
     width: 175px;
     height: 50px;
     float: left;
@@ -47,19 +46,19 @@ body {
 
 .header {
     height: 55px;
-    background: url('/img/header@2x.jpg') no-repeat;
+    background: url('../img/header@2x.jpg') no-repeat;
     background-size: 100%;
 }
 
 .banner {
     height: 135px;
-    background: url('/img/steak@2x.jpg') no-repeat;
+    background: url('../img/steak@2x.jpg') no-repeat;
     background-size: 100%;
 }
 
 .bill-summary {
     height: 180px;
-   /* background-color: #204d74;*/
+    /* background-color: #204d74;*/
 }
 
 .items {
@@ -79,24 +78,24 @@ body {
 }
 
 .beer {
-    background-image: url("/img/corona-boottle@2x.jpg");
+    background-image: url("../img/corona-boottle@2x.jpg");
     background-size: 100%;
 }
 
 .payment {
-    background-image: url("/img/payment@2x.jpg");
+    background-image: url("../img/payment@2x.jpg");
     background-size: 100%;
 }
 
 .tabs-transaction {
     height: 50px;
-    background: url('/img/food-items@2x.jpg') no-repeat;
+    background: url('../img/food-items@2x.jpg') no-repeat;
     background-size: 100%;
 }
 
 .transaction-buttons {
     height: 45px;
-    background: url('/img/pay-buttons@2x.jpg') no-repeat;
+    background: url('../img/pay-buttons@2x.jpg') no-repeat;
     background-size: 100%;
 }
 
@@ -171,11 +170,73 @@ body {
 .login-mock {
     width: 375px;
     height: 667px;
-    background-image: url("/img/login.jpg");
+    background-image: url("../img/login.jpg");
     background-size: 100%;
 }
 
 
+.friends .header {
+    height: 55px;
+    background-image: url("../img/addfriends-header.jpg");
+    background-size: 100%;
+}
+
+.friends .banner {
+    height: 120px;
+    background-image: url("../img/addfriends-banner.jpg");
+    background-size: 100%;
+}
+
+.friends .near {
+    margin-top: 5px;
+    height: 310px;
+    overflow-y: scroll;
+}
+
+.friends ul {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+.friends li {
+    height: 60px;
+    background-color: white;
+    list-style: none;
+    margin-top: 3px;
+}
+
+.friends li img {
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    margin-top: 6px;
+    float: left;
+    margin-right: 20px;
+}
+
+.friends li input {
+    float: right;
+    margin-right: 15px;
+    margin-top: 15px;
+    width: 30px;
+    height: 30px;
+}
+
+
+.friends .friend-name {
+    font-size: 20px;
+    margin-top: 3px;
+
+}
+
+.friends .friend-distance {
+    color:  #d3d1cb;
+}
+
+.other-friends {
+    height: 50px;
+    background-image: url("../img/other-friends.jpg");
+    background-size: 100%;
+}
 
 /* colorA: ed9801  */
 /* colorB: d73037  */
@@ -183,4 +244,3 @@ body {
 /* red:     d83037  */
 /*   */
 /*   */
-
