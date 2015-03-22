@@ -32,6 +32,8 @@ public class MasterPass {
         data.setRedirectShippingProfiles(null);
         data.setAcceptedCards("master,amex,diners,discover,maestro,visa");
         data = controller.getRequestToken(data);
+        data = controller.getPairingToken(data);
+        controller.postMerchantInit(data);
 
         if (data.getErrorMessage() != null) {
             System.out.println("ERROR:" + data.getErrorMessage());
@@ -72,7 +74,7 @@ public class MasterPass {
 
         System.out.println("Set the following in page to enable popup:");
         System.out.println("MasterPass.client.checkout( { ... } )");
-        System.out.println("requestToken" +  data.getRequestTokenResponse().getOauthExpiresIn());
+        System.out.println("requestToken" +  data.getRequestToken());
         System.out.println("callbackUrl" +  data.getCallbackUrl());
         System.out.println("merchantCheckoutId" +  data.getCheckoutIdentifier());
         System.out.println("allowedCardTypes" +  data.getAcceptedCards());
@@ -93,6 +95,8 @@ public class MasterPass {
         cred.setSuppressShippingAddressEnable(data.getShippingSuppression());
         cred.setLoyaltyEnabled(data.getRewards());
         cred.setRequestBasicCheckout(data.getAuthLevelBasic());
+        cred.setPairingRequestToken(data.getPairingToken());
+        cred.setRequestPairing(true);
         return cred;
     }
 

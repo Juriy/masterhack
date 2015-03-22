@@ -14,6 +14,8 @@ public class Credentials {
     private Boolean loyaltyEnabled;
     private Boolean requestBasicCheckout;
     private String version = "v6";
+    private String pairingRequestToken;
+    private Boolean requestPairing;
 
     public String getRequestToken() {
         return requestToken;
@@ -85,5 +87,21 @@ public class Credentials {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public String getPairingRequestToken() {
+        return pairingRequestToken;
+    }
+
+    public void setPairingRequestToken(String pairingRequestToken) {
+        this.pairingRequestToken = pairingRequestToken;
+    }
+
+    public Boolean getRequestPairing() {
+        return requestPairing;
+    }
+
+    public void setRequestPairing(Boolean requestPairing) {
+        this.requestPairing = requestPairing;
     }
 }
